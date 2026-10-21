@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation en Informatique</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            padding: 8px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+
+<fieldset>
+    <legend>Part 1: Les Listes</legend>
+
+    <h3>Les Modules :</h3>
+    <ul>
+        <li>Développement Web</li>
+        <li>Réseaux Informatiques</li>
+        <li>Bases de données</li>
+        <li>Algorithmique</li>
+    </ul>
+
+    <h3>Les Étapes D'inscription :</h3>
+    <ol type="I">
+        <li>Inscription</li>
+        <li>Validation du dossier</li>
+        <li>Choix de la formation</li>
+        <li>Confirmation de L'inscription</li>
+    </ol>
+
+    <h3>Liste imbriquée :</h3>
+    <ul>
+        <li>Développement Web
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </li>
+        <li>Réseaux informatiques
+            <ul>
+                <li>Ethernet</li>
+                <li>TCP/IP</li>
+                <li>Routage</li>
+            </ul>
+        </li>
+        <li>Bases de données
+            <ul>
+                <li>MySQL</li>
+                <li>Oracle</li>
+            </ul>
+        </li>
+    </ul>
+</fieldset>
+
+<fieldset>
+    <legend>Part 2: Formulaire</legend>
+    <form action="#" method="post">
+        <table border="0">
+            <tr>
+                <th colspan="2" style="text-align: left;"><h4>Informations Personnelles</h4></th>
+            </tr>
+            <tr>
+                <td><label for="name">Nom :</label></td>
+                <td><input type="text" id="name" name="nom" placeholder="Entrer nom" required></td>
+            </tr>
+            <tr>
+                <td><label for="prenom">Prénom :</label></td>
+                <td><input type="text" id="prenom" name="prenom" placeholder="Entrer prénom" required></td>
+            </tr>
+            <tr>
+                <td><label for="mail">Adresse email :</label></td>
+                <td><input type="email" id="mail" name="email" placeholder="Entrer email" required></td>
+            </tr>
+            <tr>
+                <td><label for="pswd">Mot de passe :</label></td>
+                <td><input type="password" id="pswd" name="password" required></td>
+            </tr>
+            <tr>
+                <td><label for="dt">Date de naissance :</label></td>
+                <td><input type="date" id="dt" name="date_naissance"></td>
+            </tr>
+            <tr>
+                <td><label for="age">Âge (entre 18 et 60 ans) :</label></td>
+                <td><input type="number" id="age" name="age" min="18" max="60" required></td>
+            </tr>
+            <tr>
+                <td><label>Sexe :</label></td>
+                <td>
+                    <input type="radio" id="homme" name="sexe" value="homme" checked>
+                    <label for="homme">Homme</label><br>
+                    <input type="radio" id="femme" name="sexe" value="femme">
+                    <label for="femme">Femme</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="telephone">Téléphone :</label></td>
+                <td><input type="tel" id="telephone" name="telephone"></td>
+            </tr>
+
+            <tr>
+                <th colspan="2" style="text-align: left;"><h4>Parcours & Compétences</h4></th>
+            </tr>
+            <tr>
+                <td><label for="section">Niveau d'étude :</label></td>
+                <td>
+                    <select name="niveau" id="section" required>
+                        <option value="">--Sélectionnez--</option>
+                        <option value="1ere annee">1ère année</option>
+                        <option value="2eme annee">2ème année</option>
+                        <option value="3eme annee">3ème année</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="filiere">Filière souhaitée :</label></td>
+                <td>
+                    <select name="filiere" id="filiere" required>
+                        <option value="">--Choisissez votre filière--</option>
+                        <option value="Genie Informatiques">Génie Informatique</option>
+                        <option value="Reseaux et telecommunications">Réseaux et télécommunications</option>
+                        <option value="Inteligence artificielle">Intelligence artificielle</option>
+                        <option value="Cybersecurite">Cybersécurité</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Technologies maîtrisées :</label></td>
+                <td>
+                    <input type="checkbox" id="html_tech" name="tech" value="HTML">
+                    <label for="html_tech">HTML</label><br>
+
+                    <input type="checkbox" id="css_tech" name="tech" value="CSS">
+                    <label for="css_tech">CSS</label><br>
+
+                    <input type="checkbox" id="js_tech" name="tech" value="JavaScript">
+                    <label for="js_tech">JavaScript</label><br>
+
+                    <input type="checkbox" id="py_tech" name="tech" value="Python">
+                    <label for="py_tech">Python</label>
+                </td>
+            </tr>
+
+            <tr>
+                <th colspan="2" style="text-align: left;"><h4>Dossier</h4></th>
+            </tr>
+            <tr>
+                <td><label for="cv">CV :</label></td>
+                <td><input type="file" name="cv" id="cv"></td>
+            </tr>
+            <tr>
+                <td><label for="question">Pourquoi souhaitez-vous suivre<br> cette formation ?</label></td>
+                <td><textarea name="question" id="question" rows="4" cols="30"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <br>
+                    <input type="submit" value="S'inscrire">
+                    <input type="reset" value="Réinitialiser">
+                </td>
+            </tr>
+        </table>
+    </form>
+</fieldset>
+
+</body>
+</html>
