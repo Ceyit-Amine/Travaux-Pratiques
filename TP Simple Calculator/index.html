@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A simple, accessible calculator." />
+    <title>Quick Calc</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="calculator">
+      <header class="calculator__header">
+        <h1>Basic Calculator</h1>
+      </header>
+
+      <form class="calculator__form" id="calculator-form">
+        <div class="field">
+          <label for="num1">First number</label>
+          <input id="num1" name="num1" type="number" inputmode="decimal" step="any" placeholder="" required />
+        </div>
+
+        <div class="operator-field">
+          <label for="operator">Operation</label>
+          <select id="operator" name="operator">
+            <option value="">Select an operation</option>
+            <option value="add">Add (+)</option>
+            <option value="subtract">Subtract (-)</option>
+            <option value="divide">Divide (÷)</option>
+            <option value="multiply">Multiply (×)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="num2">Second number</label>
+          <input id="num2" name="num2" type="number" inputmode="decimal" step="any" placeholder="" required />
+        </div>
+
+        <button class="button" type="submit">Calculate <span aria-hidden="true">→</span></button>
+      </form>
+
+      <section class="result-card" aria-live="polite">
+        <p class="result-card__label">Your result</p>
+        <output class="result" id="result" for="num1 operator num2">—</output>
+        <p class="error" id="error" role="alert"></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

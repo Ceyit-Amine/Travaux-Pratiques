@@ -1,0 +1,176 @@
+:root {
+  --notion-bg: #ffffff;
+  --notion-canvas: #f7f6f3;
+  --notion-border: rgba(15, 15, 15, 0.1);
+  --notion-text: #37352f;
+  --notion-muted: rgba(55, 53, 47, 0.65);
+  --notion-hover: rgba(55, 53, 47, 0.08);
+  --notion-primary: #2eaadc;
+  --notion-primary-hover: #0081b5;
+  --notion-danger: #eb5757;
+
+  --font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: var(--notion-canvas);
+  color: var(--notion-text);
+  font-family: var(--font-sans);
+}
+
+.calculator {
+  width: min(100%, 560px);
+  padding: 32px;
+  border: 1px solid var(--notion-border);
+  border-radius: 6px;
+  background: var(--notion-bg);
+  box-shadow:
+    rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,
+    rgba(15, 15, 15, 0.1) 0px 3px 6px,
+    rgba(15, 15, 15, 0.2) 0px 9px 24px;
+}
+
+.calculator__header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--notion-border);
+}
+
+.eyebrow,
+.result-card__label {
+  margin: 0 0 4px;
+  color: var(--notion-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: var(--notion-muted);
+  font-size: 0.95rem;
+}
+
+.calculator__form {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr;
+  gap: 12px;
+  align-items: end;
+}
+
+.field,
+.operator-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  color: var(--notion-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 36px;
+  border: 1px solid var(--notion-border);
+  border-radius: 4px;
+  padding: 0 10px;
+  outline: none;
+  background: rgba(242, 241, 238, 0.6);
+  color: var(--notion-text);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+input:focus,
+select:focus {
+  background: var(--notion-bg);
+  border-color: var(--notion-primary);
+  box-shadow: 0 0 0 1px var(--notion-primary);
+}
+
+.button {
+  grid-column: 1 / -1;
+  min-height: 36px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--notion-primary);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 160ms ease;
+}
+
+.button:hover {
+  background: var(--notion-primary-hover);
+}
+
+.button:active {
+  background: #006892;
+}
+
+.result-card {
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid var(--notion-border);
+  border-radius: 4px;
+  background: rgba(242, 241, 238, 0.6); /* Matches a Notion callout block */
+}
+
+.result {
+  display: block;
+  overflow-wrap: anywhere;
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--notion-text);
+  margin-top: 4px;
+}
+
+.error {
+  min-height: 1.25em;
+  margin: 8px 0 0;
+  color: var(--notion-danger);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 520px) {
+  .calculator__form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .operator-field {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .button {
+    grid-row: 3;
+  }
+}
